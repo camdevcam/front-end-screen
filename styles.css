@@ -1,0 +1,72 @@
+body {
+	margin:0;
+	padding:0;
+}
+.wrap { 
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+.nav { 
+    float:left;
+    width: 22%;
+    background: rgb(18,46,73);
+    color: #fff;    
+}
+.screen {
+    float: left;
+    width: 75%;
+    padding-left: 20px;
+}
+.spacer { 
+    height: 120px;
+}
+.user-state { 
+    float:right;
+}
+#search {
+    float:right;
+}
+#hd { 
+    background: #dddddd;
+}
+#footer {
+	clear:both;
+	float:left;
+	width:100%;
+}
+.row div { 
+  border: 1px solid #ddd;
+}
+.col-xs-15,
+.col-sm-15,
+.col-md-15,
+.col-lg-15 {
+    position: relative;
+    min-height: 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.col-xs-15 {
+    width: 20%;
+    float: left;
+}
+@media (min-width: 768px) {
+.col-sm-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 992px) {
+    .col-md-15 {
+        width: 20%;
+        float: left;
+    }
+}
+@media (min-width: 1200px) {
+    .col-lg-15 {
+        width: 20%;
+        float: left;
+    }
+}
