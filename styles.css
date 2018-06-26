@@ -27,6 +27,9 @@ body {
 #search {
     float:right;
 }
+#size { 
+    cursor: pointer;
+}
 #hd { 
     background: #dddddd;
 }
