@@ -34,7 +34,7 @@
     var string ="";
 
     for (i in json) {
-        string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+        string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="chk[]"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
     };
     document.getElementsByClassName('update-data')[0].innerHTML =string
 
@@ -94,16 +94,20 @@
         var str ="";
 
         for (i in json) {
-            str +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+            str +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="chk[]"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
         };
 
         document.getElementsByClassName('update-data')[0].innerHTML =str;
     }); 
 
-    function toggle(source) {
-      checkboxes = document.getElementsByName('ck');
-      for(var checkbox in checkboxes)
-        checkbox.checked = source.checked;
+    function checkAll(checked){ // pass true or false to check or uncheck all
+        var inputs = document.getElementsByTagName("input");
+        for (var i = 0; i < inputs.length; i++) { 
+            if (inputs[i].type == "checkbox") { 
+                inputs[i].checked = checked; 
+                // This way it won't flip flop them and will set them all to the same value which is passed into the function
+            }  
+        }  
     }
 
     function matchIt(input) {
