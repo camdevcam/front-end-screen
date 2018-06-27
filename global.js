@@ -13,6 +13,21 @@
                 "Type": "Directory",
                 "DateModified": "6/26/2018 10:29:59",
                 "Size": "6 KB",
+            },{
+                "Name": "software",
+                "Type": "Directory",
+                "DateModified": "3/16/2018 10:29:59",
+                "Size": "16 KB",
+            },{
+                "Name": "mmm_data",
+                "Type": "Directory",
+                "DateModified": "6/27/2018 1:19:29",
+                "Size": "3 KB",
+            },{
+                "Name": "jobs",
+                "Type": "Directory",
+                "DateModified": "4/27/2018 11:59:59",
+                "Size": "3 KB",
             },
     ];
 
