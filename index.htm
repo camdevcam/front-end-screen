@@ -40,7 +40,7 @@
 </ul>  
     
 <footer>
-    <span class="cr">2018 Scala Computing, Inc.</span>
+    <span class="cr">2018 Scala Computing, Inc.</span><br>
     <span class="cr">All rights reserved</span>
 </footer>    
     
@@ -58,7 +58,7 @@
         
         <div class="row">
             <button class="new" onclick="newDirectory()">New Directory</button>
-            <button class="upload">Upload</button>
+            <button class="upload" onclick="addUpload()">Upload</button>
         </div>
         
         <div class="row">
@@ -94,7 +94,7 @@
 
         </div>
         
-        <div class="spacer"></div>    
+        <div class="sm-sp"></div>
         
         <div id="changeDirectory">
             <form>
@@ -102,6 +102,38 @@
             <input type='button' onclick='updateDir()' value='Change Directory'/>
             </form>    
         </div>
+        
+        <div class="sm-sp"></div>
+        
+        <div id="addUpload">
+            <p>Insert details below for new upload:</p>
+            <form id="test" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input class="form-control" type="text" name="name" id="name" />
+            </div>
+            <div class="form-group">
+                <label for="select">Type</label>
+                <select name="select" class="form-control">
+                    <option value="none" selected="selected">Directory</option>
+                    <option value="nonDir">Non-Directory</option>
+                </select>
+
+            </div>
+            <div class="form-group">
+                <label for="email">Date Modified</label>
+                <input class="form-control" type="text" name="dateM" id="dateM" />
+            </div>
+            <div class="form-group">
+                <label for="size">Size</label>
+                <input class="form-control" type="sized" name="sized" id="sized" />
+            </div>
+            <p>
+                <input type="submit" value="Upload New" class="btn btn-primary btn-block" />
+            </p>
+        </form>	
+        <pre id="output"></pre>
+    </div>
         
     </div>
     

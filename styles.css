@@ -7,21 +7,33 @@ body {
     margin: 0 auto;
     position: relative;
 }
-.nav { 
-    float:left;
-    width: 22%;
+.nav {
+    float: left;
+    width: 19%;
     background: rgb(18,46,73);
-    color: #fff; 
+    color: #fff;
     height: 100vh;
-    padding-left:10px;
+    padding-right: 11px;
+    overflow: hidden;
 }
 .screen {
     float: left;
-    width: 75%;
-    padding-left: 20px;
+    width: 80%;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 5px;
+    overflow-x: hidden;
+    padding-left: 25px;
+}
+.actions, .data-columns { 
+    width: 98%;
+}
+.user-state { 
+    padding-right: 10px;
 }
 .cr { 
-    font-size: 12px;
+    font-size: 11px;
+    padding:5px;
 }
 .spacer { 
     height: 120px;
@@ -44,7 +56,7 @@ body {
     display: inline-block;
     width: 100%;
     padding: 5px;
-    padding-right: 50px;
+    padding-right: 45px;
     border: 0px;
 }
 #ac { 

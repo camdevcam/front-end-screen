@@ -10,7 +10,7 @@
                 "Size": "2 KB",
             }, {
                 "Name": "workflow",
-                "Type": "Directory",
+                "Type": "Non-Directory",
                 "DateModified": "6/26/2018 10:29:59",
                 "Size": "6 KB",
             },{
@@ -135,9 +135,19 @@
     }
 
     document.getElementById("changeDirectory").style.display="none";
+    document.getElementById("addUpload").style.display="none";
 
     function newDirectory() {
         var x = document.getElementById("changeDirectory");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function addUpload() {
+        var x = document.getElementById("addUpload");
         if (x.style.display === "none") {
             x.style.display = "block";
         } else {
@@ -150,3 +160,33 @@
         document.getElementById('crumb').innerHTML = userInput;
         document.getElementById("changeDirectory").style.display = "none";
     }
+
+
+//    function UploadAdd() {
+//        function toJSONString( form ) {
+//            var obj = {};
+//            var elements = form.querySelectorAll( "input, select, textarea" );
+//            for( var i = 0; i < elements.length; ++i ) {
+//                var element = elements[i];
+//                var name = element.name;
+//                var value = element.value;
+//
+//                if( name ) {
+//                    obj[ name ] = value;
+//                }
+//            }
+//
+//            return JSON.stringify( obj );
+//        }
+//
+//        document.addEventListener( "DOMContentLoaded", function() {
+//            var form = document.getElementById( "test" );
+//            var output = document.getElementById( "output" );
+//            form.addEventListener( "submit", function( e ) {
+//                e.preventDefault();
+//                var json = toJSONString( this );
+//                output.innerHTML = json;
+//
+//            }, false);
+//
+//        });
