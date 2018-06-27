@@ -21,14 +21,40 @@
     var string ="";
 
     for (i in json) {
-        string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" id="all" name="all" value="all"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+        string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
     };
     document.getElementsByClassName('update-data')[0].innerHTML =string
 
-    json.sort(function(a, b) {
-        return parseFloat(a.Size) - parseFloat(b.Size);
-    });
-    
+    document.getElementById('size').addEventListener('click', function () {
+        json.sort(function(a, b) {
+            return parseFloat(a.Size) - parseFloat(b.Size);
+                for (i in json) {
+                string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+            };    
+        });
+    });    
+
+    function toggle(source) {
+      checkboxes = document.getElementsByName('ck');
+      for(var checkbox in checkboxes)
+        checkbox.checked = source.checked;
+    }
+
+    function matchIt(input) {
+      var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
+      return json.filter(function(file) {
+        if (file.match(reg)) {
+          return file;
+        }
+      });
+    }
+
+    function changeInput(val) {
+      var autoCompleteResult = matchIt(val);
+      document.getElementById("result").innerHTML = autoCompleteResult;
+    }
+
+//
 //    document.getElementById('size').addEventListener('click', function () {
 //        json.sort(function)(a,b);
-//    });    
+//    };    

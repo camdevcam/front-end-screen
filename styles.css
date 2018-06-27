@@ -24,7 +24,7 @@ body {
 .user-state { 
     float:right;
 }
-#search {
+#autoSuggest {
     float:right;
 }
 #size { 
