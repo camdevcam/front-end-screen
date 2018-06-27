@@ -36,7 +36,9 @@
     for (i in json) {
         string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="chk[]"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
     };
+
     document.getElementsByClassName('update-data')[0].innerHTML =string
+    document.getElementById("result").style.display="none"; 
 
     // Sort functions + outputs
 
@@ -118,5 +120,16 @@
     function changeInput(val) {
       if (val.length == 0) return;
       var autoCompleteResult = matchIt(val);
-      document.getElementById("ac").innerHTML = autoCompleteResult.map(i => i.Name).join('<br>')
+      document.getElementById("ac").innerHTML = autoCompleteResult.map(i => i.Name).join('<br>');
+      document.getElementById("result").style.display="inline-block"; 
+    
+      startTimer()
+    }
+
+    function hideResult () {
+        document.getElementById("result").style.display="none"; 
+    }
+
+    function startTimer() {
+        var tim = window.setTimeout("hideResult()", 5000);
     }
