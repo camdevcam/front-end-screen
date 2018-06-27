@@ -27,8 +27,12 @@ body {
 #autoSuggest {
     float:right;
 }
-#size, #named, #type, #dated,  { 
+.sr { 
     cursor: pointer;
+}
+.sr:hover { 
+    text-decoration: underline;
+    font-weight: bolder;
 }
 #hd { 
     background: #dddddd;

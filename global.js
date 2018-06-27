@@ -23,6 +23,8 @@
     };
     document.getElementsByClassName('update-data')[0].innerHTML =string
 
+    // Sort functions + outputs
+
     document.getElementById('size').addEventListener('click', function () {
         json.sort(function(a, b) {
             return parseFloat(a.Size) - parseFloat(b.Size);
