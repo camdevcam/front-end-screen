@@ -33,6 +33,7 @@
 </ul> 
    
 <div class="spacer"></div>        
+<div class="spacer"></div>    
     
 <ul>
     <li>Contact</li>    
@@ -52,10 +53,11 @@
     <h3>Files</h3>
     
     <section class="actions">
-        <span class="crumbs">Root /</span>
+        <span id="crumb">Root</span>/
+        <div class="sm-sp"></div>
         
         <div class="row">
-            <button class="new">New Directory</button>
+            <button class="new" onclick="newDirectory()">New Directory</button>
             <button class="upload">Upload</button>
         </div>
         
@@ -63,7 +65,9 @@
             <input type="text" id="autoSuggest" placeholder="Search..." onkeyup="changeInput(this.value)">
             <div id="result"><div id="ac"></div></div>
         </div>
-    
+        
+        <div class="sm-sp"></div>
+
     </section>
     
     <div class="data-columns">
@@ -88,6 +92,15 @@
         
         <div class="update-data">
 
+        </div>
+        
+        <div class="spacer"></div>    
+        
+        <div id="changeDirectory">
+            <form>
+            <input type="text" id="chDir" placeholder="Enter new directory.."/>
+            <input type='button' onclick='updateDir()' value='Change Directory'/>
+            </form>    
         </div>
         
     </div>

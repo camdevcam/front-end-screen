@@ -133,3 +133,20 @@
     function startTimer() {
         var tim = window.setTimeout("hideResult()", 5000);
     }
+
+    document.getElementById("changeDirectory").style.display="none";
+
+    function newDirectory() {
+        var x = document.getElementById("changeDirectory");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function updateDir(){
+        var userInput = document.getElementById('chDir').value;
+        document.getElementById('crumb').innerHTML = userInput;
+        document.getElementById("changeDirectory").style.display = "none";
+    }
