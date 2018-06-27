@@ -10,11 +10,40 @@ body {
 .nav {
     float: left;
     width: 19%;
-    background: rgb(18,46,73);
     color: #fff;
     height: 100vh;
     padding-right: 11px;
     overflow: hidden;
+    background: rgb(18,46,73);
+    box-shadow: -10px 14px 52px #333 inset;
+}
+.sub { 
+    line-height: 2;
+    text-align: center;
+    font-weight: bolder;
+    font-style: italic;
+}
+ul li { 
+    list-style-type:none;
+    cursor:pointer;
+}
+li > img { 
+    opacity: .4;
+}
+.ic { 
+    max-width:25px;
+    padding: 5px;
+}
+.ar { 
+   font-weight: bold;
+}
+button { 
+   background: none;
+}
+.logo img {
+    max-width: 103px;
+    margin-left: 28%;
+    padding-top: 10px;
 }
 .screen {
     float: left;
@@ -31,9 +60,13 @@ body {
 .user-state { 
     padding-right: 10px;
 }
-.cr { 
-    font-size: 11px;
-    padding:5px;
+.cr {
+    font-size: 10px;
+    padding: 5px;
+    text-align: center;
+    display: inherit;
+    line-height: 0;
+    font-style: italic;
 }
 .spacer { 
     height: 120px;
