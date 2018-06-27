@@ -100,26 +100,23 @@
         document.getElementsByClassName('update-data')[0].innerHTML =str;
     }); 
 
-    function checkAll(checked){ // pass true or false to check or uncheck all
+    function checkAll(checked){ 
         var inputs = document.getElementsByTagName("input");
         for (var i = 0; i < inputs.length; i++) { 
             if (inputs[i].type == "checkbox") { 
                 inputs[i].checked = checked; 
-                // This way it won't flip flop them and will set them all to the same value which is passed into the function
+
             }  
         }  
     }
 
     function matchIt(input) {
       var reg = new RegExp(input.split('').join('\\w*').replace(/\W/, ""), 'i');
-      return json.filter(function(file) {
-        if (file.match(reg)) {
-          return file;
-        }
-      });
+      return json.filter(file => !!file.Name.match(reg));
     }
 
     function changeInput(val) {
+      if (val.length == 0) return;
       var autoCompleteResult = matchIt(val);
-      document.getElementById("result").innerHTML = autoCompleteResult;
+      document.getElementById("ac").innerHTML = autoCompleteResult.map(i => i.Name).join('<br>')
     }

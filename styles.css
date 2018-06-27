@@ -34,6 +34,24 @@ body {
     text-decoration: underline;
     font-weight: bolder;
 }
+#result { 
+    text-align: right;
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    padding-right: 50px;
+    border: 0px;
+}
+#ac { 
+    width: 12%;
+    position: absolute;
+    right: 22px;
+    text-align: center;
+    margin-top: -10px;
+    z-index: 1001;
+    background: lightblue;
+    padding: 6px;
+}
 #hd { 
     background: #dddddd;
 }
