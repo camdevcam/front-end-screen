@@ -1,5 +1,3 @@
-//window.addEventListener('load', function() {
-
     var json =[{
                 "Name": "zips",
                 "Type": "Directory",
@@ -28,11 +26,62 @@
     document.getElementById('size').addEventListener('click', function () {
         json.sort(function(a, b) {
             return parseFloat(a.Size) - parseFloat(b.Size);
-                for (i in json) {
-                string +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
-            };    
         });
-    });    
+
+        var str ="";
+
+        for (i in json) {
+            str +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+        };
+
+        document.getElementsByClassName('update-data')[0].innerHTML =str;
+    }); 
+
+    document.getElementById('dated').addEventListener('click', function () {
+        json.sort(function(a, b) {
+            return parseFloat(a.DateModified) - parseFloat(b.DateModified);
+        });
+
+        var str ="";
+
+        for (i in json) {
+            str +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+        };
+
+        document.getElementsByClassName('update-data')[0].innerHTML =str;
+    }); 
+
+    document.getElementById('named').addEventListener('click', function () {
+        json.sort(function(a, b) {
+            var textA = a.Name.toUpperCase();
+            var textB = b.Name.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
+
+        var str ="";
+
+        for (i in json) {
+            str +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+        };
+
+        document.getElementsByClassName('update-data')[0].innerHTML =str;
+    }); 
+
+    document.getElementById('type').addEventListener('click', function () {
+        json.sort(function(a, b) {
+            var textA = a.Type.toUpperCase();
+            var textB = b.Type.toUpperCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+        });
+
+        var str ="";
+
+        for (i in json) {
+            str +='<div class="row"><div class="col-md-15 col-sm-1"><input type="checkbox" name="ck"></div><div class="col-md-15 col-sm-4"><span class="folders">'+json[i].Name+'</span></div><div class="col-md-15 col-sm-3"><span class="directory">'+json[i].Type+'</span></div><div class="col-md-15 col-sm-3"><span class="date-stamp">'+json[i].DateModified+'</span></div><div class="col-md-15 col-sm-1"><span class="date-size">'+json[i].Size+'</span></div></div>';
+        };
+
+        document.getElementsByClassName('update-data')[0].innerHTML =str;
+    }); 
 
     function toggle(source) {
       checkboxes = document.getElementsByName('ck');
@@ -53,8 +102,3 @@
       var autoCompleteResult = matchIt(val);
       document.getElementById("result").innerHTML = autoCompleteResult;
     }
-
-//
-//    document.getElementById('size').addEventListener('click', function () {
-//        json.sort(function)(a,b);
-//    };    

@@ -27,7 +27,7 @@ body {
 #autoSuggest {
     float:right;
 }
-#size { 
+#size, #named, #type, #dated,  { 
     cursor: pointer;
 }
 #hd { 
