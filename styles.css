@@ -72,6 +72,10 @@ button {
 .user-state { 
     padding-right: 10px;
 }
+.update-data { 
+    font-size: 15px;
+    line-height: 2;
+}
 #addUpload, #changeDirectory { 
     position: absolute;
     width: 100%;
