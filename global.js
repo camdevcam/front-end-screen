@@ -167,7 +167,7 @@
     }
 
     document.querySelector("#submit").addEventListener('click', function () {
-        document.getElementById("addUpload").style.display = "block";
+        document.getElementById("addUpload").style.display = "none";
         json.push({
             Name:document.querySelector("#name").value,
             Type:document.querySelector("select").value,
@@ -175,7 +175,7 @@
             Size:sized.value
         });
 
-      output.innerText=JSON.stringify(json);
+//      output.innerText=JSON.stringify(json);
             var str ="";
 
         for (i in json) {
