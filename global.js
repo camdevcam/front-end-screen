@@ -155,38 +155,25 @@
         }
     }
 
+    function Close() { 
+        document.getElementById("changeDirectory").style.display = "none";
+        document.getElementById("addUpload").style.display = "none";
+    }
+
     function updateDir(){
         var userInput = document.getElementById('chDir').value;
         document.getElementById('crumb').innerHTML = userInput;
         document.getElementById("changeDirectory").style.display = "none";
     }
 
+    document.querySelector("#submit").addEventListener('click', function () {
+        document.getElementById("addUpload").style.display = "block";
+        json.push({
+            Name:document.querySelector("#name").value,
+            Type:document.querySelector("select").value,
+            DateModified:dateM.value,
+            Size:sized.value
+        });
 
-//    function UploadAdd() {
-//        function toJSONString( form ) {
-//            var obj = {};
-//            var elements = form.querySelectorAll( "input, select, textarea" );
-//            for( var i = 0; i < elements.length; ++i ) {
-//                var element = elements[i];
-//                var name = element.name;
-//                var value = element.value;
-//
-//                if( name ) {
-//                    obj[ name ] = value;
-//                }
-//            }
-//
-//            return JSON.stringify( obj );
-//        }
-//
-//        document.addEventListener( "DOMContentLoaded", function() {
-//            var form = document.getElementById( "test" );
-//            var output = document.getElementById( "output" );
-//            form.addEventListener( "submit", function( e ) {
-//                e.preventDefault();
-//                var json = toJSONString( this );
-//                output.innerHTML = json;
-//
-//            }, false);
-//
-//        });
+      output.innerText=JSON.stringify(json);
+    });

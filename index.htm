@@ -61,7 +61,7 @@
         </div>
         
         <div class="row">
-            <input type="text" id="autoSuggest" placeholder="Search..." onkeyup="changeInput(this.value)">
+            <input type="text" class="form-control" id="autoSuggest" placeholder="Search..." onkeyup="changeInput(this.value)">
             <div id="result"><div id="ac"></div></div>
         </div>
         
@@ -96,17 +96,21 @@
         <div class="sm-sp"></div>
         
         <div id="changeDirectory">
+            <span class="close" onclick='Close()'>(Done)</span>
+            <p>Insert the new directory name below:</p>        
             <form>
-            <input type="text" id="chDir" placeholder="Enter new directory.."/>
-            <input type='button' onclick='updateDir()' value='Change Directory'/>
+            <input type="text" id="chDir" class="form-control" placeholder="Enter new directory.."/>
+            <br>
+            <input type='button' onclick='updateDir()' value='Change Directory' class="btn btn-primary btn-block" />
             </form>    
         </div>
         
         <div class="sm-sp"></div>
         
         <div id="addUpload">
-            <p>Insert details below for new upload:</p>
-            <form id="test" action="#" method="post">
+            <span class="close" onclick='Close()'>(Done)</span>
+            <p>Insert details below for the 'new upload':</p>
+            <form id="test">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input class="form-control" type="text" name="name" id="name" />
@@ -128,12 +132,14 @@
                 <input class="form-control" type="sized" name="sized" id="sized" />
             </div>
             <p>
-                <input type="submit" value="Upload New" class="btn btn-primary btn-block" />
+                <input id="submit" value="Upload New" class="btn btn-primary btn-block" />
             </p>
         </form>	
-        <pre id="output"></pre>
+        <p>Updated output below:</p>
+
+        <div id="output"></div>
     </div>
-        
+
     </div>
     
 </section>    

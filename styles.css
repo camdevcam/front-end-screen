@@ -17,11 +17,12 @@ body {
     background: rgb(18,46,73);
     box-shadow: -10px 14px 52px #333 inset;
 }
-.sub { 
-    line-height: 2;
+.sub {
+    line-height: 3;
     text-align: center;
     font-weight: bolder;
     font-style: italic;
+    text-decoration: overline;
 }
 ul li { 
     list-style-type:none;
@@ -38,6 +39,10 @@ li > img {
     font-weight: bold;
     font-size: 12px;
     opacity: .3;
+}
+form#test { 
+    width: 40%;
+    margin: 0 auto;
 }
 button { 
    background: none;
@@ -66,6 +71,29 @@ button {
 }
 .user-state { 
     padding-right: 10px;
+}
+#addUpload, #changeDirectory { 
+    position: absolute;
+    width: 100%;
+    top: 17%;
+    background: rgba(255, 255, 255, 0.8);
+    left: 0px;
+    padding: 30px;
+    margin: 0 auto;
+    height: 100vh;
+}
+#addUpload, #changeDirectory > p { 
+    text-align:center;
+    font-weight:bold;
+}
+#changeDirectory form { 
+    width: 30%;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+.close { 
+    float:right;
+    font-weight:bolder;
 }
 .cr {
     font-size: 10px;
@@ -109,12 +137,17 @@ button {
     background: lightblue;
     padding: 6px;
     border: 0px;
+    text-decoration:underline;
 }
 #hd { 
     background: #dddddd;
 }
 .sm-sp { 
   height: 15px;
+}
+#form { 
+    width: 50%;
+    margin: 0 auto;
 }
 #footer {
 	clear:both;
@@ -134,7 +167,12 @@ button {
     padding-right: 10px;
     padding-left: 10px;
 }
-
+#output {
+    background: #333333;
+    padding: 10px;
+    font-weight: normal;
+    color: #ffffff;
+}
 .col-xs-15 {
     width: 20%;
     float: left;
